@@ -1,9 +1,11 @@
+import { ChildProcess } from "child_process";
 import { log } from "console";
 import { CLIENT_RENEG_LIMIT } from "tls";
 
 
 let myArr: string[] = ["Ussaid", "Maryam", "Rameen"];
 let arr2: number[] = [1, 54, 78, 68, 98, 45];
+const numbers = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5];
 
 
 //============== Mutating Methods change the original array ============================
@@ -31,6 +33,15 @@ let arr2: number[] = [1, 54, 78, 68, 98, 45];
 // let spliceArr = arr2.splice(1, 2, 100)
 // console.log(spliceArr)              //      [ 54, 78 ]              deleted item at index 1=54 & index 2=78
 // console.log(arr2)                   //      [ 1, 100, 68, 98, 45 ]  added item at index 1=100
+
+// console.log(numbers.sort())          //  [1, 1, 2, 3, 3, 4, 5, 5, 5, 6, 9]
+// const sortNumbers = numbers.sort((a, b) => b - a)
+// console.log(numbers);                //  [9, 6, 5, 5, 5, 4, 3, 3, 2, 1, 1]
+// console.log(sortNumbers);            //  [9, 6, 5, 5, 5, 4, 3, 3, 2, 1, 1]  sorted in descending order
+
+// const fillArr = numbers.fill(5, 3, 5);
+// console.log(fillArr);       //      [3, 1, 4, 5, 5, 9, 2, 6, 5, 3, 5]
+// console.log(numbers);       //      [3, 1, 4, 5, 5, 9, 2, 6, 5, 3, 5]
 
 //============== Non-Mutating Methods does not change the original array ============================
 let numArr1 = [1,2,3,4,5,6,7,8]
@@ -73,10 +84,24 @@ const fruits = ['apple', 'banana', 'cherry', 'date'];
 let allParametersFilter = fruits.filter((item, index, array) => {
     return item.length > 5 && index % 2 === 0;
 })
-console.log(allParametersFilter)
+// console.log(allParametersFilter)         //  ["cherry"]
 
 let mapArr = numArr2.map(value => value * 2)
 // console.log(mapArr)                  //      [12, 14, 16, 18, 20, 22, 24]
+
+
+let reduceArr = numArr1.reduce(function (previousValue, currentValue, currentIndex, array) {
+    // console.log(`${previousValue}, ${currentValue}, ${currentIndex}, ${array}`)
+    return previousValue + currentValue;
+}, 0)
+// console.log(reduceArr)        //      36  adds up all the array elements to single num from left to right
+
+let reduceRightArr = numArr2.reduceRight((previousValue, currentValue, currentIndex, array) => {
+    // console.log(`${previousValue}, ${currentValue}, ${currentIndex}, ${array}`)
+    return currentValue - currentIndex + previousValue;
+})
+// console.log(reduceRightArr)        //      48  adds up all the array elements to single num from right to left
+
 
 let everyArr = myArr.every((word, index, array) => {
     return index < 4 && word.length % 2 === 0;
@@ -90,11 +115,13 @@ let everyArr2 = numArr3.every((num, index, array) => {
     }
     return num % 2 === 0 && num > array[index - 1]
 })
-// console.log("Result:", everyArr2)       //       true
+// console.log("Result:", everyArr2)       //      true --  if one false found it will return false
 
-
-
-
+const someArr = numArr1.some((value, index, array) => {
+    // console.log(`${value}, ${index}, ${array}`)
+    return value % 2 === 0;                //      true --  if one true found it will return true
+})
+// console.log(someArr);
 
 
 
