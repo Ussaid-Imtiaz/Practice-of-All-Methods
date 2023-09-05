@@ -53,15 +53,44 @@ let sliceArr = arr2.slice(1, 4);
 // console.log(sliceArr);      //      [ 54, 78, 68 ]
 // console.log(arr2);          //      [ 1, 54, 78, 68, 98, 45 ]
 
+const filterArr = arr2.filter((a) => a % 2 === 0 && a > 70);
+// console.log(filterArr)          //      [ 78, 98 ]      even numbers greater than 70 filtered
+// console.log(arr2)               //      [ 1, 54, 78, 68, 98, 45 ]
 
+const filterArr2 = myArr.filter((word) => word.includes("e"));
+// console.log(filterArr2)          //      [ 'Rameen' ]      string with e filtered
+// console.log(myArr)               //      [ 'Ussaid', 'Maryam', 'Rameen' ]
 
+let numArr1 = [1,2,3,4,5,6,7,8]
+let numArr2 = [6,7,8,9,10,11,12]
+const commonItems = numArr1.filter(item => numArr2.indexOf(item) !== -1)
+// console.log(commonItems)             //      [ 6, 7, 8 ]
+const uncommonItems = numArr1.filter(item => numArr2.indexOf(item) == -1).concat(numArr2.filter(item => numArr1.indexOf(item) == -1)) ;
+// console.log(uncommonItems)      //      [1,  2,  3,  4, 5, 9, 10, 11, 12]
 
+// const numArr1 = [1, 2, 3];
+// const numArr2 = [2, 3, 4, 5];
 
+// const uncommonItems = numArr2.filter((item) => !numArr1.includes(item));
 
+// console.log(uncommonItems); // Output: [4, 5]
 
+let mapArr = numArr2.map(value => value * 2)
+// console.log(mapArr)         //      [12, 14, 16, 18, 20, 22, 24]
 
+let everyArr = myArr.every((word, index, array) => {
+    return index < 4 && word.length % 2 === 0;
+});
+// console.log('Result:', everyArr)        //      true
 
-
+let numArr3 = [2,4,6,8,10,12]
+let everyArr2 = numArr3.every((num, index, array) => {
+    if (index === 0) {
+        return true;
+    }
+    return num % 2 === 0 && num > array[index - 1]
+})
+// console.log("Result:", everyArr2)       //  true
 
 
 
