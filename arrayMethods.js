@@ -1,5 +1,6 @@
 let myArr = ["Ussaid", "Maryam", "Rameen"];
 let arr2 = [1, 54, 78, 68, 98, 45];
+const numbers = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5];
 //============== Mutating Methods change the original array ============================
 // let pushArr = myArr.push("Ussaid");
 // console.log(pushArr.toString())    //  return index no. 4 as string
@@ -15,18 +16,14 @@ let arr2 = [1, 54, 78, 68, 98, 45];
 // console.log(myArr);                         //      [ 'Maryam', 'Rameen' ]
 // let reverseArr = arr2.reverse();
 // console.log(reverseArr)         //      [ 45, 98, 68, 78, 54, 1 ]
-// console.log(arr2)               //      [ 45, 98, 68, 78, 54, 1 ]
 // let spliceArr = arr2.splice(1, 2, 100)
 // console.log(spliceArr)              //      [ 54, 78 ]              deleted item at index 1=54 & index 2=78
 // console.log(arr2)                   //      [ 1, 100, 68, 98, 45 ]  added item at index 1=100
-const numbers = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5];
-// console.log(numbers.sort())         //  [1, 1, 2, 3, 3, 4, 5, 5, 5, 6, 9]
+// console.log(numbers.sort())          //  [1, 1, 2, 3, 3, 4, 5, 5, 5, 6, 9]
 // const sortNumbers = numbers.sort((a, b) => b - a)
-// console.log(numbers);
-// console.log(sortNumbers);       //  [9, 6, 5, 5, 5, 4, 3, 3, 2, 1, 1]  sorted in descending order
-const fillArr = numbers.fill(5, 3, 5);
-console.log(fillArr);
-console.log(numbers);
+// console.log(sortNumbers);            //  [9, 6, 5, 5, 5, 4, 3, 3, 2, 1, 1]  sorted in descending order
+// const fillArr = numbers.fill(5, 3, 10);
+// console.log(fillArr);       //      [3, 1, 4, 5, 5, 5, 5, 5, 5, 5, 5]    filled 5 in array from index 3 to 10
 //============== Non-Mutating Methods does not change the original array ============================
 let numArr1 = [1, 2, 3, 4, 5, 6, 7, 8];
 let numArr2 = [6, 7, 8, 9, 10, 11, 12];
