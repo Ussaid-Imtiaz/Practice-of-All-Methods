@@ -1,7 +1,3 @@
-import { ChildProcess } from "child_process";
-import { log } from "console";
-import { CLIENT_RENEG_LIMIT } from "tls";
-
 
 let myArr: string[] = ["Ussaid", "Maryam", "Rameen"];
 let arr2: number[] = [1, 54, 78, 68, 98, 45];
