@@ -29,7 +29,7 @@ const numbers = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5];
 // console.log(spliceArr)              //      [ 54, 78 ]              deleted item at index 1=54 & index 2=78
 // console.log(arr2)                   //      [ 1, 100, 68, 98, 45 ]  added item at index 1=100
 
-// console.log(numbers.sort())          //  [1, 1, 2, 3, 3, 4, 5, 5, 5, 6, 9]
+// console.log(numbers.sort())          //  [1, 1, 2, 3, 3, 4, 5, 5, 5, 6, 9]  sorted as strings not as numbers
 // const sortNumbers = numbers.sort((a, b) => b - a)
 // console.log(sortNumbers);            //  [9, 6, 5, 5, 5, 4, 3, 3, 2, 1, 1]  sorted in descending order
 
